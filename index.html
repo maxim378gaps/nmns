@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEW MINES</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Фон -->
+    <div class="background"></div>
+
+    <!-- Звезды -->
+    <div id="stars-container"></div>
+
+    <!-- Заголовок -->
+    <div class="title-container">
+        <h1>NEW MINES</h1>
+    </div>
+
+    <!-- Игровая панель -->
+    <div class="game-container">
+        <div class="grid"></div>
+    </div>
+
+    <!-- Статус бар -->
+    <div class="status-bar">
+        <!-- Выбор мин -->
+        <div class="trap-selector">
+            <button id="decrease-traps">◄</button>
+            <span id="num-traps">5</span>
+            <button id="increase-traps">►</button>
+        </div>
+
+        <!-- Кнопка SIGNAL -->
+        <button id="highlight-btn">SIGNAL</button>
+
+        <!-- Кнопка MENU -->
+        <a id="menu-btn" href="https://maxim378gaps.github.io/hall/"><strong>MENU</strong></a>
+    </div>
+
+    <!-- Таймер -->
+    <div class="timer-container">
+        <div class="timer-bar"></div>
+        <p id="timer-text"></p>
+    </div>
+</body>
+</html>
