@@ -48,7 +48,7 @@ body {
 /* Заголовок */
 .title-container {
     position: absolute;
-    top: 50px; /* Спускаем заголовок ниже */
+    top: 70px; /* Спускаем заголовок ниже */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
