@@ -63,28 +63,24 @@ function startTimer() {
     increaseTrapsButton.disabled = true;
     timerText.textContent = "Wait for the next signal...";
 
-    // Сохраняем время начала таймера
     const startTime = Date.now();
     localStorage.setItem('timerStartTime', startTime);
 
-    // Сбрасываем ширину индикатора
     timerBar.style.transition = 'none';
     timerBar.style.width = '0';
 
-    // Включаем анимацию и запускаем заполнение
     setTimeout(() => {
         timerBar.style.transition = 'width 15s linear';
         timerBar.style.width = '100%';
     }, 10);
 
-    // Разблокируем кнопки через 15 секунд
     setTimeout(() => {
         isTimerRunning = false;
         highlightButton.disabled = false;
         decreaseTrapsButton.disabled = false;
         increaseTrapsButton.disabled = false;
         timerText.textContent = "Signal is available!";
-        localStorage.removeItem('timerStartTime'); // Удаляем сохраненное время
+        localStorage.removeItem('timerStartTime');
     }, 15000);
 }
 
@@ -102,33 +98,29 @@ function checkTimer() {
             increaseTrapsButton.disabled = true;
             timerText.textContent = "Wait for the next signal...";
 
-            // Устанавливаем ширину индикатора в соответствии с оставшимся временем
             const progress = (elapsedTime / 15000) * 100;
             timerBar.style.transition = 'none';
             timerBar.style.width = `${progress}%`;
 
-            // Включаем анимацию и продолжаем заполнение
             setTimeout(() => {
                 timerBar.style.transition = `width ${remainingTime}ms linear`;
                 timerBar.style.width = '100%';
             }, 10);
 
-            // Разблокируем кнопки через оставшееся время
             setTimeout(() => {
                 isTimerRunning = false;
                 highlightButton.disabled = false;
                 decreaseTrapsButton.disabled = false;
                 increaseTrapsButton.disabled = false;
                 timerText.textContent = "Signal is available!";
-                localStorage.removeItem('timerStartTime'); // Удаляем сохраненное время
+                localStorage.removeItem('timerStartTime');
             }, remainingTime);
         } else {
-            localStorage.removeItem('timerStartTime'); // Удаляем сохраненное время, если таймер уже завершен
+            localStorage.removeItem('timerStartTime');
         }
     }
 }
 
-// Проверяем состояние таймера при загрузке страницы
 checkTimer();
 
 // Функция для открытия безопасных ячеек
@@ -147,10 +139,8 @@ highlightButton.addEventListener('click', () => {
         return;
     }
 
-    // Очищаем все предыдущие подсветки
     document.querySelectorAll('.cell').forEach(cell => cell.classList.remove('active'));
 
-    // Случайный выбор безопасных ячеек
     const cells = Array.from(document.querySelectorAll('.cell'));
     const selectedIndices = [];
 
@@ -161,9 +151,7 @@ highlightButton.addEventListener('click', () => {
         }
     }
 
-    // Подсвечиваем выбранные безопасные ячейки
     selectedIndices.forEach(index => cells[index].classList.add('active'));
 
-    // Запускаем таймер
     startTimer();
 });
