@@ -27,8 +27,8 @@ for (let i = 0; i < 25; i++) {
 const numTrapsElement = document.getElementById('num-traps');
 const decreaseTrapsButton = document.getElementById('decrease-traps');
 const increaseTrapsButton = document.getElementById('increase-traps');
-const trapValues = [1, 3, 5, 7];
-let currentTrapIndex = 2;
+const trapValues = [2, 3, 5, 7]; // Изменено на 2,3,5,7
+let currentTrapIndex = 1; // Начинаем с 3 мин (индекс 1 в новом массиве)
 
 function updateTraps() {
     numTrapsElement.textContent = trapValues[currentTrapIndex];
@@ -128,7 +128,10 @@ highlightButton.addEventListener('click', () => {
     if (isTimerRunning) return;
 
     const safeCellsMapping = {
-        1: 14, 3: 7, 5: 5, 7: 4
+        2: 12, // Для 2 мин - 12 безопасных ячеек
+        3: 7,  // Для 3 мин - 7 безопасных ячеек
+        5: 5,  // Для 5 мин - 5 безопасных ячеек
+        7: 4   // Для 7 мин - 4 безопасных ячейки
     };
 
     const bombs = trapValues[currentTrapIndex];
