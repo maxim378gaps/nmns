@@ -27,7 +27,7 @@ for (let i = 0; i < 25; i++) {
 const numTrapsElement = document.getElementById('num-traps');
 const decreaseTrapsButton = document.getElementById('decrease-traps');
 const increaseTrapsButton = document.getElementById('increase-traps');
-const trapValues = [1, 3, 5, 7];
+const trapValues = [2, 3, 5, 7];
 let currentTrapIndex = 2;
 
 function updateTraps() {
