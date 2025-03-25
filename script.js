@@ -128,7 +128,7 @@ highlightButton.addEventListener('click', () => {
     if (isTimerRunning) return;
 
     const safeCellsMapping = {
-        1: 14, 3: 7, 5: 5, 7: 4
+        2: 14, 3: 7, 5: 5, 7: 4
     };
 
     const bombs = trapValues[currentTrapIndex];
